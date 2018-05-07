@@ -14,5 +14,5 @@ conf.set("spark.submit.deployMode", "client")
 
 sc = pyspark.SparkContext(conf=conf)
 
-file = sc.textFile("hdfs://hdfs/user/jsaba/data_etf.csv")
+file = sc.textFile("hdfs://hdfs/user/jsaba/College.csv")
 file.count()
