@@ -1,3 +1,5 @@
+import pyspark
+
 conf = pyspark.SparkConf()
 conf.setMaster("mesos://leader.mesos:5050")
 conf.setAppName("Test Alluxio")
