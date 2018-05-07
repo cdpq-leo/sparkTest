@@ -3,7 +3,7 @@ import pyspark
 conf = pyspark.SparkConf()
 conf.setMaster("mesos://leader.mesos:5050")
 conf.setAppName("Test Alluxio")
-conf.set("spark.mesos.executor.docker.image", "mesosphere/spark:2.1.0-2.2.0-1-hadoop-2.6")
+conf.set("spark.mesos.executor.docker.image", "cdpqleo/spark:2.3.1-2.2.1-2-hadoop-2.6")
 conf.set("spark.mesos.executor.home", "/opt/spark/dist")
 conf.set("spark.mesos.coarse", "true")
 conf.set("spark.driver.memory", "512m")
