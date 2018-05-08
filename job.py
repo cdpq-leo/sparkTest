@@ -11,6 +11,7 @@ conf.set("spark.executor.memory", "512m")
 conf.set("spark.executor.cores", "1")
 conf.set("spark.eventLog.enabled", "false")
 conf.set("spark.submit.deployMode", "client")
+conf.set("spark.dynamicAllocation.maxExecutors", "1")
 
 sc = pyspark.SparkContext(conf=conf)
 
