@@ -15,7 +15,7 @@ conf.set("spark.executor.instances", "1")
 conf.set("spark.cores.max", "1")
 conf.set("spark.eventLog.enabled", "true")
 conf.set("spark.eventLog.dir", "hdfs://hdfs/app/spark/2.3.0/logs")
-conf.set("spark.mesos.constraints", "host:10.32.0.24")
+conf.set("spark.mesos.constraints", "ID:85eb7a28-8989-4ab6-8f55-a12036afd12b-S1687")
 
 sc = pyspark.SparkContext(conf=conf)
 
