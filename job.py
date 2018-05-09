@@ -17,5 +17,5 @@ conf.set("spark.eventLog.dir", "hdfs://hdfs/app/spark/2.3.0/logs")
 
 sc = pyspark.SparkContext(conf=conf)
 
-file = sc.textFile("hdfs://hdfs/user/jsaba/College.csv")
+file = sc.textFile("hdfs://hdfs/user/jsaba/data_etf.csv")
 print file.count()
