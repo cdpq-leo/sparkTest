@@ -2,7 +2,7 @@ import pyspark
 
 conf = pyspark.SparkConf()
 conf.setMaster("mesos://leader.mesos:5050")
-conf.setAppName("Test Alluxio")
+conf.setAppName("Test Alluxio-memory")
 conf.set("spark.mesos.executor.docker.image", "cdpqleo/spark:2.3.1-2.2.1-2-hadoop-2.6-alluxio")
 conf.set("spark.mesos.executor.home", "/opt/spark/dist")
 conf.set("spark.mesos.coarse", "true")
@@ -17,5 +17,5 @@ conf.set("spark.eventLog.dir", "hdfs://hdfs/app/spark/2.3.0/logs")
 
 sc = pyspark.SparkContext(conf=conf)
 
-file = sc.textFile("hdfs://hdfs/user/jsaba/data_etf.csv")
+file = sc.textFile("alluxio://alluxio-master.alluxio.marathon.mesos:10102/user/jsaba/data_etf.csv")
 print file.count()
