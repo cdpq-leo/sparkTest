@@ -15,9 +15,9 @@ conf.set("spark.executor.instances", "1")
 conf.set("spark.cores.max", "1")
 conf.set("spark.eventLog.enabled", "true")
 conf.set("spark.eventLog.dir", "hdfs://hdfs/app/spark/2.3.0/logs")
-conf.set("spark.mesos.constraints", "ID:85eb7a28-8989-4ab6-8f55-a12036afd12b-S1687")
+
 
 sc = pyspark.SparkContext(conf=conf)
 
-file = sc.textFile("alluxio://alluxio-master.alluxio.marathon.mesos:19998/user/jsaba/data_etf.csv")
+file = sc.textFile("alluxio://alluxio-master.alluxio.marathon.mesos:19998/user/jsaba/College.csv")
 print file.count()
