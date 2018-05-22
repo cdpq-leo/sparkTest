@@ -17,5 +17,5 @@ conf.set("spark.eventLog.dir", "hdfs://hdfs/app/spark/2.3.0/logs")
 
 sc = pyspark.SparkContext(conf=conf)
 
-file = sc.textFile("alluxio://alluxio-master.alluxio.marathon.mesos:19998/user/jsaba/College.csv")
+file = sc.textFile("alluxio://alluxio-master.alluxio.marathon.mesos:19998/user/lpbonenfant/sample.csv")
 print file.count()
