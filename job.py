@@ -18,5 +18,5 @@ conf.set("spark.mesos.executor.docker.volumes", "/mnt/ramdisk:/opt/ramdisk")
 
 sc = pyspark.SparkContext(conf=conf)
 
-file = sc.textFile("alluxio://alluxio-master.alluxio.marathon.mesos:19998/user/lpbonenfant/sample2.csv")
+file = sc.textFile("hdfs://hdfs/user/lpbonenfant/sample2.csv")
 print file.count()
