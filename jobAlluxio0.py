@@ -24,7 +24,7 @@ file.filter(lambda x: "Spark" in x[1]).count()
 
 before = datetime.datetime.now()
 for i in range(0,40):
-    file1.filter(lambda x: "Spark" in x[1]).count()
+    file.filter(lambda x: "Spark" in x[1]).count()
 after = datetime.datetime.now()
 d = after - before
 print d.total_seconds()
