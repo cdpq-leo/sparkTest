@@ -16,10 +16,9 @@ conf.set("spark.cores.max", "1")
 conf.set("spark.eventLog.enabled", "true")
 conf.set("spark.eventLog.dir", "hdfs://hdfs/app/spark/2.3.0/logs")
 conf.set("spark.mesos.executor.docker.volumes", "/mnt/ramdisk:/opt/ramdisk")
+conf.set("spark.hadoop.fs.defaultFS", "alluxio://alluxio-master.alluxio.marathon.mesos:19998")
 
 sc = pyspark.SparkContext(conf=conf)
-sc._jsc.hadoopConfiguration.set("fs.DefaultFS", "alluxio://alluxio-master.alluxio.marathon.mesos:19998")
-
 file = sc.textFile("hdfs://hdfs/user/lpbonenfant/sample2.csv")
 file.saveAsTextFile("alluxio://alluxio-master.alluxio.marathon.mesos:19998:/user/lpbonenfant/sample3.csv")
 file1 = sc.textFile("alluxio://alluxio-master.alluxio.marathon.mesos:19998:/user/lpbonenfant/sample3.csv")
