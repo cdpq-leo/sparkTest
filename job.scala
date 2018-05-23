@@ -1,3 +1,6 @@
+// Author: Christopher Lawrie from CERN
+// https://db-blog.web.cern.ch/blog/christopher-lawrie/2016-08-experiences-using-alluxio-spark
+
 def time[R](block: => R): R = {                                     // Function to time actions.
     val t0 = System.nanoTime()
     val result = block    // call-by-name
