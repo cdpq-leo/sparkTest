@@ -22,11 +22,11 @@ sc = pyspark.SparkContext(conf=conf)
 file = sc.textFile("hdfs://hdfs/user/lpbonenfant/sample2.csv")
 file.saveAsTextFile("alluxio://alluxio-master.alluxio.marathon.mesos:19998:/user/lpbonenfant/sample3.csv")
 file1 = sc.textFile("alluxio://alluxio-master.alluxio.marathon.mesos:19998:/user/lpbonenfant/sample3.csv")
-file1.filter(file.value.contains("Spark")).count()
+file1.filter(lambda x: "Spark" in x[1]).count()
 
 before = datetime.datetime.now()
 for i in range(0,40):
-    file1.filter(file.value.contains("Spark")).count()
+    file1.filter(flambda x: "Spark" in x[1]).count()
 after = datetime.datetime.now()
 d = after - before
 print d.total_seconds()
