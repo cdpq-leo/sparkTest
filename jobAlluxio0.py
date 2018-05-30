@@ -19,7 +19,7 @@ conf.set("spark.mesos.executor.docker.volumes", "/mnt/ramdisk:/opt/ramdisk")
 conf.set("spark.hadoop.fs.defaultFS", "alluxio://alluxio-master.alluxio.marathon.mesos:19998")
 
 sc = pyspark.SparkContext(conf=conf)
-file = sc.textFile("alluxio://alluxio-master.alluxio.marathon.mesos:19998/user/lpbonenfant/sample2.csv")
+file = sc.textFile("alluxio://alluxio-master.alluxio.marathon.mesos:19998/user/lpbonenfant/sample.csv")
 file.filter(lambda x: "Spark" in x[1]).count()
 
 before = datetime.datetime.now()
