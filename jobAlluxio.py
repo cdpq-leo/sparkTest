@@ -21,4 +21,5 @@ conf.set("spark.hadoop.fs.defaultFS", "alluxio://alluxio-master.alluxio.marathon
 sc = pyspark.SparkContext(conf=conf)
 sc._jsc.hadoopConfiguration().set('fs.alluxio.impl', 'alluxio.hadoop.FileSystem')
 file = sc.textFile("alluxio://alluxio-master.alluxio.marathon.mesos:19998:/user/jsaba/data_etf.csv")
-file.filter(lambda x: "Spark" in x[1]).count()
+file.saveAsTextFile("alluxio://alluxio-master.alluxio.marathon.mesos:10102:/user/lpbonenfant/data.csv")
+
