@@ -22,6 +22,6 @@ conf.set("spark.hadoop.fs.defaultFS", "alluxio://alluxio-master.alluxio.marathon
 
 sc = pyspark.SparkContext(conf=conf)
 sc._jsc.hadoopConfiguration().set('fs.alluxio.impl', 'alluxio.hadoop.FileSystem')
-file = sc.textFile("alluxio://alluxio-master.alluxio.marathon.mesos:19998:/user/jsaba/College.csv")
+file = sc.textFile("alluxio://alluxio-master.alluxio.marathon.mesos:19998:/user/jsaba/data_etf.csv")
 count = file.filter(lambda x: x).count()
 print(count)
